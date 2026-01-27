@@ -1,0 +1,17 @@
+name: svhn_research
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - numpy>=1.23.5
+  - scipy>=1.10.0
+  - pandas>=2.0.0
+  - matplotlib>=3.7.0
+  - h5py>=3.10.0
+  - ipykernel
+  - notebook
+  - pip:
+      - tensorflow>=2.15.0
+      - protobuf==4.25.6

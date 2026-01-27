@@ -27,20 +27,15 @@ venv/
 *.ipynb_convert/
 *.nbconvert/
 
-# -----------------------------
-# TensorFlow / Keras
-# -----------------------------
-checkpoint
-checkpoints/
-checkpoints_best/
-checkpoint_weights/
+# --- TensorFlow & Model Governance ---
+# Keep the folder structure on GitHub, but ignore the large weight files
+ckps_best/*
+!ckps_best/.gitkeep
+
+# Safety net for common Keras/TF weight formats
 *.h5
-*.hdf5
 *.keras
-*.pb
-*.tflite
 *.ckpt*
-events.out.tfevents.*
 
 # -----------------------------
 # Data files

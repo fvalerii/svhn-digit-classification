@@ -3,7 +3,7 @@
 
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)
 ![Imperial College London](https://img.shields.io/badge/Academic_Partner-Imperial_College_London-blue.svg)
-![Accuracy](https://img.shields.io/badge/Accuracy-92%25-brightgreen)
+![Accuracy](https://img.shields.io/badge/Accuracy-87.7%25-brightgreen)
 ![Status](https://img.shields.io/badge/Status-Completed-success.svg)
 
 ---
@@ -56,15 +56,17 @@ The study confirms that the CNN architecture is substantially more robust for im
 
 | Architecture | Test Accuracy | Observations |
 | :--- | :--- | :--- |
-| **MLP (Baseline)** | ~88% | High parameter count; susceptible to noise.  |
-| **CNN (Champion)** | **~92%*** | Efficient parameter usage; high real-world robustness. |
+| **MLP (Baseline)** | ~81.94% | High parameter count; susceptible to noise.  |
+| **CNN (Champion)** | **86.70%*** | Efficient parameter usage; high real-world robustness. |
 
 ![CNN Predictions](./images/cnn_predictions.png)
 
 ### **Strategic Analysis: Loss & Accuracy**
 The CNN demonstrated stable convergence. The use of regularization layers ensured the validation loss remained low, indicating a model that generalizes well to new, unseen digits.
 
-![Training Loss and Accuracy Curves](./images/training_loss_curves.png)
+![MLP Training Loss and Accuracy Curves](./images/mlp_baseline_metrics.png)
+
+![CNN Training Loss and Accuracy Curves](./images/cnn_champion_metrics.png)
 
 ---
 
@@ -131,3 +133,7 @@ This project was developed as a **Capstone Research Study** for the **"TensorFlo
 
 * **Objective:** Demonstrate mastery of the TensorFlow 2 ecosystem, including custom training loops, architecture comparative analysis, and model deployment readiness.
 * **Status:** Verified and Peer-Reviewed.
+
+---
+
+> **Note:** To ensure scientific reproducibility, global random seeds were set for NumPy, Python, and TensorFlow. Note that minor variances (<0.1%) may still occur due to non-deterministic CUDA kernels when switching between GPU architectures.

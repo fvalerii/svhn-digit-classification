@@ -59,10 +59,12 @@ The study confirms that the CNN architecture is substantially more robust for im
 | **MLP (Baseline)** | ~88% | High parameter count; susceptible to noise.  |
 | **CNN (Champion)** | **~92%*** | Efficient parameter usage; high real-world robustness. |
 
+![CNN Predictions](./images/cnn_predictions.png)
+
 ### **Strategic Analysis: Loss & Accuracy**
 The CNN demonstrated stable convergence. The use of regularization layers ensured the validation loss remained low, indicating a model that generalizes well to new, unseen digits.
 
-![CNN Predictions](./images/cnn_predictions.png)
+![Training Loss and Accuracy Curves](./images/training_loss_curves.png)
 
 ---
 
@@ -79,25 +81,41 @@ The CNN demonstrated stable convergence. The use of regularization layers ensure
 ---
 
 ## ⚙️ Installation & Setup
-### 1. Clone the Repository
+
+### **Option A: Cloud Execution (Recommended)**
+The most efficient way to reproduce this study is via **Google Colab**. This environment provides the necessary GPU acceleration required for deep learning without the need for local configuration.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fvalerii/svhn-image-classification/blob/main/notebooks/svhn_image_classifier.ipynb)
+
+* **Note:** You will need to upload the SVHN `.mat` files to your Colab session storage or mount your Google Drive to access the dataset.
+
+---
+
+### **Option B: Local Execution (VS Code / Jupyter)**
+If you prefer to run the research study locally, ensure you have a Python 3.10+ environment (ideally with GPU support via NVIDIA CUDA).
+
+#### **1. Clone the Repository**
+1. Clone the Repository
 ```bash
 git clone https://github.com/fvalerii/svhn-image-classification.git
 ```
-### 2. Install Required Python Packages
+### **2. Environment Setup** 
 It is recommended to use a environment with Python 3.12.8 and GPU support:
-##### Option A: Using Pip
+##### Using Pip:
 ```bash
 pip install -r requirements.txt
 ```
-##### Option B: Using Conda
+##### Using Conda:
 ```bash
 conda env create -f environment.yml
 conda activate svhn_research
 ```
-### 3. Data Setup
-1. Download Format 2 (Cropped Digits) from: [http://ufldl.stanford.edu/housenumbers/]("http://ufldl.stanford.edu/housenumbers/")
-2. Place `train_32x32.mat` and `test_32x32.mat` in the `data/` directory.
-### 4. Run the Notebook
+### **3. Data Acquisition** 
+The SVHN dataset (Format 2: Cropped Digits) must be downloaded manually due to its size:
+1. Download `train_32x32.mat` and `test_32x32.mat` from [http://ufldl.stanford.edu/housenumbers/]("http://ufldl.stanford.edu/housenumbers/")
+2. Place both files inside the `/data/` directory of this project.
+
+### **4. Run the Notebook**
 Open the Jupyter Notebook located at notebooks/svhn_image_classifier.ipynb using VS Code or JupyterLab.
 
 ---

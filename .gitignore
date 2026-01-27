@@ -33,6 +33,7 @@ venv/
 checkpoint
 checkpoints/
 checkpoints_best/
+checkpoint_weights/
 *.h5
 *.hdf5
 *.keras

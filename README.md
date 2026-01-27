@@ -1,19 +1,41 @@
-# 🖼️ SVHN Digit Recognition: A Deep Learning Comparative Study
+# 🖼️ SVHN Digit Classification: MLP & CNN Deep Learning Models
 ### *Neural Networks & Computer Vision Research*
 
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
-![Model](https://img.shields.io/badge/Model-XGBoost-red)
-![Tech Stack](https://img.shields.io/badge/Tech%20Stack-Python%20%7C%20Pandas%20%7C%20Sklearn-orange)
+![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Status](https://img.shields.io/badge/Status-Completed-success.svg)
+![Dataset](https://img.shields.io/badge/Dataset-SVHN-blueviolet.svg)
 
 ---
 
 ## 📋 Project Overview
-This research project focuses on the development of an image classification system for the Street View House Numbers (SVHN) dataset. The goal was to design, train, and evaluate two distinct neural network architectures—a Multi-Layer Perceptron (MLP) and a Convolutional Neural Network (CNN)—to accurately identify house numbers in real-world images.
+This repository contains an end‑to‑end deep learning project for classifying digits from the **Street View House Numbers (SVHN)** dataset.  
+Two models are implemented and compared:
+
+- A **Multilayer Perceptron (MLP)**
+- A **Convolutional Neural Network (CNN)**
+
+The CNN achieves higher accuracy with **7× fewer parameters**, demonstrating the efficiency of convolutional architectures for image‑based tasks.
 
 ---
 
-## 🎯 Business Objective
+## 🎯 Research Objective
 The SVHN dataset is significantly more challenging than MNIST because it contains real-world house numbers with varying backgrounds, lighting, and orientations. This project investigates the efficiency of spatial feature extraction by comparing a flat MLP architecture against a spatially-aware CNN.
+
+---
+
+## 📊 Dataset: SVHN
+
+The **SVHN dataset** contains real‑world digit images extracted from Google Street View.  
+It is more challenging than MNIST due to:
+
+- Natural scene backgrounds  
+- Varying lighting conditions  
+- Cropped digits with noise  
+
+Dataset reference:  
+**Y. Netzer et al., “Reading Digits in Natural Images with Unsupervised Feature Learning,” NIPS Workshop, 2011.**
 
 ---
 
@@ -51,18 +73,18 @@ The CNN demonstrated smoother convergence curves. Below the visualization, the m
 
 ## 📂 Project Deliverables
 - **[Jupyter Notebook](./notebooks/svhn_image_classifier.ipynb):** Full end-to-end TensorFlow implementation, including data pipeline and model training.
-- **[Project PDF Summary:](./docs/svhn_project_summary.pdf):** A comprehensive breakdown of the architecture, hyperparameters, and final performance metrics.
 
 ---
 
 ## ⚙️ Installation & Setup
 To replicate this research environment:
+
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/fvalerii/svhn-image-classification.git
 ```
 ### 2. Install Required Python Packages
-It is recommended to use a GPU-enabled environment.
+It is recommended to use a environment with Python 3.12.8 and GPU support:
 ##### Option A: Using Pip
 ```bash
 pip install -r requirements.txt
@@ -73,17 +95,18 @@ conda env create -f environment.yml
 conda activate salifort_research
 ```
 ### 3. Data Setup (Mandatory)
-The dataset is hosted on Kaggle. To replicate this project:
-1. Download the dataset **HR_comma_sep.csv** from [Kaggle](https://www.kaggle.com/datasets/mfaisalqureshi/hr-analytics-and-job-prediction).
-2. Place **HR_comma_sep.csv** inside the`/data/` folder of this project.
-### 4. Run the Analysis
-Open `notebooks/schn_image_classifier.ipynb` to view the training logs and model predictions.
+The SVHN dataset (format 2) consists of `.mat` files.
+1. Download from: http://ufldl.stanford.edu/housenumbers/ (ufldl.stanford.edu)
+2. Place the .mat files in the data/ directory
+### 4. Run the Notebook
+Open the Jupyter Notebook located at notebooks/svhn_image_classifier.ipynb using VS Code or JupyterLab.
+
 ---
 
 ## 💻 Tech Stack
 - **Frameworks:** TensorFlow 2.x, Keras
-- **Libraries:** umPy, Scipy (for .mat file loading), Matplotlib (Visualizations)
-- **Data::** Street View House Numbers (SVHN) Dataset
+- **Libraries:** NumPy, Scipy, Matplotlib, Pandas
+- **Architecture:**Convolutional Neural Networks (CNN), Multi-Layer Perceptrons (MLP)
 
 ---
 

@@ -1,0 +1,100 @@
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+*.pickle
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.dll
+*.dylib
+
+# -----------------------------
+# Jupyter Notebooks
+# -----------------------------
+.ipynb_checkpoints/
+*.ipynb_convert/
+*.nbconvert/
+
+# -----------------------------
+# TensorFlow / Keras
+# -----------------------------
+checkpoint
+checkpoints/
+checkpoints_best/
+checkpoint_weights/
+*.h5
+*.hdf5
+*.keras
+*.pb
+*.tflite
+*.ckpt*
+events.out.tfevents.*
+
+# -----------------------------
+# Data files
+# -----------------------------
+data/
+*.mat
+*.csv
+*.tsv
+*.zip
+*.gz
+
+# Allow small sample data
+!data/sample_*.*
+!data/README.md
+
+# -----------------------------
+# Logs
+# -----------------------------
+logs/
+*.log
+
+# -----------------------------
+# OS / Editor files
+# -----------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+
+# -----------------------------
+# Cache
+# -----------------------------
+.cache/
+*.cache
+*.tmp
+tmp/
+temp/
+
+# -----------------------------
+# Build artifacts
+# -----------------------------
+build/
+dist/
+*.egg-info/
+*.egg

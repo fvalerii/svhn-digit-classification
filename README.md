@@ -95,7 +95,6 @@ The most efficient way to reproduce this study is via **Google Colab**. This env
 If you prefer to run the research study locally, ensure you have a Python 3.10+ environment (ideally with GPU support via NVIDIA CUDA).
 
 #### **1. Clone the Repository**
-1. Clone the Repository
 ```bash
 git clone https://github.com/fvalerii/svhn-image-classification.git
 ```

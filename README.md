@@ -1,6 +1,7 @@
 # 🖼️ SVHN Digit Classification: Deep Learning Comparative Study
 ### *Neural Networks & Computer Vision Research*
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fvalerii/svhn-image-classification/blob/main/notebooks/svhn_image_classifier.ipynb)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)
 ![Imperial College London](https://img.shields.io/badge/Academic_Partner-Imperial_College_London-blue.svg)
 ![Accuracy](https://img.shields.io/badge/Accuracy-87.7%25-brightgreen)
@@ -87,9 +88,19 @@ The CNN demonstrated stable convergence. The use of regularization layers ensure
 ### **Option A: Cloud Execution (Recommended)**
 The most efficient way to reproduce this study is via **Google Colab**. This environment provides the necessary GPU acceleration required for deep learning without the need for local configuration.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fvalerii/svhn-image-classification/blob/main/notebooks/svhn_image_classifier.ipynb)
-
-* **Note:** You will need to upload the SVHN `.mat` files to your Colab session storage or mount your Google Drive to access the dataset.
+1. **Click the Badge:** Open the notebook via the "Open in Colab" badge at the top.
+2. **Prepare your Drive:** To ensure persistence, this notebook expects a specific folder structure in your Google Drive:
+```
+My Drive/
+└── Colab Notebooks/
+    └── SVHN/
+        └── data/
+            ├── train_32x32.mat
+            └── test_32x32.mat
+```
+3. **Run the Setup:** Execute the first cell to mount your Drive and set the working directory. The notebook will automatically create folders for ckps_best/ (weights) and images/ (plots) if they are missing.
+* **Note:** You
+ will need to upload the SVHN `.mat` files to your Colab session storage or mount your Google Drive to access the dataset.
 
 ---
 

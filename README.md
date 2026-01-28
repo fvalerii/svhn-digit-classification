@@ -1,10 +1,10 @@
 # 🖼️ SVHN Digit Classification: Deep Learning Comparative Study
 ### *Neural Networks & Computer Vision Research*
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fvalerii/svhn-image-classification/blob/main/notebooks/svhn_image_classifier.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fvalerii/svhn-digit-classification/blob/main/notebooks/svhn_digit_classifier.ipynb)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)
 ![Imperial College London](https://img.shields.io/badge/Academic_Partner-Imperial_College_London-blue.svg)
-![Accuracy](https://img.shields.io/badge/Accuracy-87.7%25-brightgreen)
+![Accuracy](https://img.shields.io/badge/Accuracy-86.13%25-brightgreen)
 ![Status](https://img.shields.io/badge/Status-Completed-success.svg)
 
 ---
@@ -57,10 +57,10 @@ The study confirms that the CNN architecture is substantially more robust for im
 
 | Architecture | Test Accuracy | Observations |
 | :--- | :--- | :--- |
-| **MLP (Baseline)** | ~81.94% | High parameter count; susceptible to noise.  |
-| **CNN (Champion)** | **86.70%*** | Efficient parameter usage; high real-world robustness. |
+| **MLP (Baseline)** | ~80.91% | High parameter count; susceptible to noise.  |
+| **CNN (Champion)** | **86.13%** | Efficient parameter usage; high real-world robustness. |
 
-![CNN Predictions](./images/cnn_predictions.png)
+![Comparative Predictions](./images/comparative_predictions.png)
 
 ### **Strategic Analysis: Loss & Accuracy**
 The CNN demonstrated stable convergence. The use of regularization layers ensured the validation loss remained low, indicating a model that generalizes well to new, unseen digits.
@@ -79,40 +79,21 @@ The CNN demonstrated stable convergence. The use of regularization layers ensure
 ---
 
 ## 📂 Project Deliverables
-- **[Jupyter Notebook](./notebooks/svhn_image_classifier.ipynb):** Full end-to-end TensorFlow implementation, including data pipeline and model training.
+- **[Jupyter Notebook](./notebooks/svhn_digit_classifier.ipynb):** Full end-to-end TensorFlow implementation, including data pipeline and model training.
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### **Option A: Cloud Execution (Recommended)**
-The most efficient way to reproduce this study is via **Google Colab**. This environment provides the necessary GPU acceleration required for deep learning without the need for local configuration.
-
-1. **Click the Badge:** Open the notebook via the "Open in Colab" badge at the top.
-2. **Prepare your Drive:** To ensure persistence, this notebook expects a specific folder structure in your Google Drive:
-```
-My Drive/
-└── Colab Notebooks/
-    └── SVHN/
-        └── data/
-            ├── train_32x32.mat
-            └── test_32x32.mat
-```
-3. **Run the Setup:** Execute the first cell to mount your Drive and set the working directory. The notebook will automatically create folders for ckps_best/ (weights) and images/ (plots) if they are missing.
-* **Note:** You
- will need to upload the SVHN `.mat` files to your Colab session storage or mount your Google Drive to access the dataset.
-
----
-
-### **Option B: Local Execution (VS Code / Jupyter)**
-If you prefer to run the research study locally, ensure you have a Python 3.10+ environment (ideally with GPU support via NVIDIA CUDA).
+### **Option A: Local Execution (Recommended Performance)**
+Due to the optimized small batch size and the relatively low computational overhead of 32x32 images, local CPU training is faster than cloud GPU execution for this project. This is due to the elimination of data-transfer latency between RAM and VRAM.
 
 #### **1. Clone the Repository**
 ```bash
-git clone https://github.com/fvalerii/svhn-image-classification.git
+git clone https://github.com/fvalerii/svhn-digit-classification.git
 ```
 ### **2. Environment Setup** 
-It is recommended to use a environment with Python 3.12.8 and GPU support:
+It is recommended to use a environment with Python 3.12.8:
 ##### Using Pip:
 ```bash
 pip install -r requirements.txt
@@ -128,7 +109,25 @@ The SVHN dataset (Format 2: Cropped Digits) must be downloaded manually due to i
 2. Place both files inside the `/data/` directory of this project.
 
 ### **4. Run the Notebook**
-Open the Jupyter Notebook located at notebooks/svhn_image_classifier.ipynb using VS Code or JupyterLab.
+Open the Jupyter Notebook located at `notebooks/svhn_digit_classifier.ipynb` using VS Code or JupyterLab.
+
+---
+
+### **Option B: Cloud Execution (Alternative)**
+If you prefer a cloud environment for persistence, the notebook remains fully compatible with Google Colab.
+- Note: Training on a GPU is not recommended for this specific configuration, as the increased batch size required to saturate a GPU (e.g., 256+) leads to a measurable drop in validation accuracy due to the generalization gap.
+
+1. **Click the Badge:** Open the notebook via the "Open in Colab" badge at the top.
+2. **Prepare your Drive:** This notebook expects a specific folder structure in your Google Drive:
+```
+My Drive/
+└── Colab Notebooks/
+    └── SVHN/
+        └── data/
+            ├── train_32x32.mat
+            └── test_32x32.mat
+```
+3. **Run the Setup:** Execute the first cell to mount your Drive and set the working directory. The notebook will automatically create folders for ckps_best/ (weights) and images/ (plots) if they are missing.
 
 ---
 
